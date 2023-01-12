@@ -1,3 +1,11 @@
+libinput (1.20.0-1ubuntu0.2) jammy; urgency=medium
+
+  * Disable pressure for not detecting contact size (LP: #2002609)
+    - d/p/0001-quirks-add-quirks-for-Dell-Precision5680-Touchpad.patch
+      Disable the pressure handling for the touchpad.
+
+ -- Kai-Chuan Hsieh <kaichuan.hsieh@canonical.com>  Thu, 12 Jan 2023 14:58:22 +0800
+
 libinput (1.20.0-1ubuntu0.1) jammy-security; urgency=medium
 
   * SECURITY UPDATE: Format string vulnerability

@@ -1,0 +1,29 @@
+From 29a49e968e67eb7bf6d63c9f93b06ee983772018 Mon Sep 17 00:00:00 2001
+From: Charles Wang <charles.goodix@gmail.com>
+Date: Wed, 11 Jan 2023 17:16:13 +0800
+Subject: [PATCH] quirks: add quirks for Dell Precision5680 Touchpad
+
+This touchpad is a pressure pad and needs the pressure
+handling disable.
+
+Fixes https://gitlab.freedesktop.org/libinput/libinput/-/issues/849
+
+Signed-off-by: Charles Wang <charles.goodix@gmail.com>
+---
+ quirks/50-system-dell.quirks | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+--- a/quirks/50-system-dell.quirks
++++ b/quirks/50-system-dell.quirks
+@@ -108,3 +108,11 @@
+ MatchVendor=0x2575
+ MatchProduct=0x0204
+ ModelDellCanvasTotem=1
++
++# This is a true pressurepad so disable pressure for contact size
++# https://gitlab.freedesktop.org/libinput/libinput/-/issues/849
++[Dell Precision5680 Touchpad]
++MatchBus=i2c
++MatchVendor=0x27C6
++MatchProduct=0x0F60
++AttrEventCodeDisable=ABS_MT_PRESSURE;ABS_PRESSURE;
