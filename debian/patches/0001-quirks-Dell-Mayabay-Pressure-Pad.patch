@@ -1,0 +1,18 @@
+From: Marge Yang <marge.yang@synaptics.corp-partner.google.com>
+Subject: [PATCH] quirks: Dell Mayabay (Pressure Pad).
+
+* quirks/50-system-dell.quirks: Add new quirk for 2nd source touchpad
+
+Origin: upstream, https://gitlab.freedesktop.org/libinput/libinput/-/commit/74415b13fb72c457e5439c974f59e1b0d08a27ed
+--- a/quirks/50-system-dell.quirks
++++ b/quirks/50-system-dell.quirks
+@@ -116,3 +116,9 @@
+ MatchVendor=0x27C6
+ MatchProduct=0x0F60
+ AttrEventCodeDisable=ABS_MT_PRESSURE;ABS_PRESSURE;
++
++[Dell Mayabay Touchpad]
++MatchBus=i2c
++MatchVendor=0x06CB
++MatchProduct=0xCFA0
++AttrEventCodeDisable=ABS_MT_PRESSURE;ABS_PRESSURE;
