@@ -1,3 +1,14 @@
+libinput (1.20.0-1ubuntu0.4) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: Arbitrary code execution in libinput-device-group
+    - debian/patches/CVE-2026-50292-pre1.patch: Add various helper functions
+      in src/util-mem.h
+    - debian/patches/CVE-2026-50292.patch: Sanitize phys before printing
+      it in udev/libinput-device-group.c.
+    - CVE-2026-50292
+
+ -- Kyle Kernick <kyle.kernick@canonical.com>  Tue, 21 Jul 2026 14:40:48 -0600
+
 libinput (1.20.0-1ubuntu0.3) jammy; urgency=medium
 
   * Disable pressure for Precision5680 2nd source touchpad (LP: #2023623)
